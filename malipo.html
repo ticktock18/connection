@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      z-index: 0;
+    }
+    .footer {
+      position: fixed;
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 10px;
+      font-weight: bold;
+      font-family: 'Ubuntu', sans-serif;
+      z-index: 1;
+      text-transform: capitalize; /* Each word starts with capital */
+      white-space: normal;  /* 👈 allow text to wrap on mobile */
+      word-break: break-word; /* 👈 ensures long words wrap */
+    }
+    .footer.top {
+      top: 0;
+    }
+    .footer.bottom {
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="https://uchi-mtamu.store/kuma-tamu-255-yc6t01jw"></iframe>
+
+  <div class="footer top" id="topFooter"></div>
+  <div class="footer bottom" id="bottomFooter"></div>
+
+  <script>
+    const message = "kama umelipia, haujapata huduma au unashindwa kulipia tuma sms kwenda 0749579249";
+
+    function typeWriter(elementId, text, speed = 80, pause = 2500) {
+      let i = 0;
+      function typing() {
+        if (i < text.length) {
+          document.getElementById(elementId).textContent += text.charAt(i);
+          i++;
+          setTimeout(typing, speed);
+        } else {
+          // pause, then clear and restart
+          setTimeout(() => {
+            document.getElementById(elementId).textContent = "";
+            i = 0;
+            typing();
+          }, pause);
+        }
+      }
+      typing();
+    }
+
+    // Run typing effect on both footers
+    typeWriter("topFooter", message, 80, 2500);
+    typeWriter("bottomFooter", message, 80, 2500);
+  </script>
+</body>
+</html>
